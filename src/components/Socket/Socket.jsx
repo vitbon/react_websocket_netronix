@@ -36,7 +36,7 @@ export default class Socket extends React.Component {
       });
 
       let accumul = this.state.messages.slice().concat(messages);
-      if (accumul.length > 14) accumul.splice(0, 3);
+      if (accumul.length > 13) accumul.splice(0, 4);
       this.setState({ messages: accumul });      
     };
 
