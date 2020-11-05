@@ -22,21 +22,25 @@ export default class Socket extends React.Component {
     this.socket.onmessage = event => { 
       let messages = JSON.parse(event.data);
 
-      // formating the measurements
+      // formating the datestamp and value
       messages.map((item, dex) => {
         let str = "";
+        let formattedTime = "";
         item.measurements.forEach((element, idx) => {
-          if(element[1].length >= 2) str += `Data[${idx}] = ${element[0]}, {${element[1]}}; \n`;
-            else if(element[1].length === 1) str += `Data[${idx}] = {${element[0]},  ${element[1]}}; \n`;
-              else str += `Data[${idx}] = ${element}; \n`;
+          const date = new Date(element[0] * 1000);
+          formattedTime = `Date: ${date.toLocaleString()}.  Value: `;
+          console.log('formattedTime: ', formattedTime);
+          if(element[1].length >= 2) str = `${element[0]}, {${element[1]}}.`;
+            else if(element[1].length === 1) str = `{${element[0]},  ${element[1]}}.`;
+              else str = `${element}.`;
         });
-        item.measurements = str;
-        item.uniqKey = str.concat(item._id, item.name)
+        item.measurements = formattedTime + str;
+        item.uniqKey = str.concat(item._id, item.name)        
         return item;
       });
 
       let accumul = this.state.messages.slice().concat(messages);
-      if (accumul.length > 13) accumul.splice(0, 4);
+      if (accumul.length >= 20) accumul.splice(0, 3);
       this.setState({ messages: accumul });      
     };
 
