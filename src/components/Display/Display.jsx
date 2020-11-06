@@ -3,6 +3,8 @@ import './display.css';
 
 export default class Display extends Component {
   render() {
+		const bbb = Math.round((Math.random()*1000))%2;
+		const blink = bbb ? "blink" : "";
 		return (
 			<div className="container">
 				<div className="header">
@@ -35,10 +37,10 @@ export default class Display extends Component {
 									<td width="10%" key={Date.now()*Math.random()}>
 										{item.unit}
 									</td>
-									<td width="20%" key={Date.now()*Math.random()}>
+									<td width="20%" key={Date.now()*Math.random()} className={item.blink}>
 										{item.timeStamp}
 									</td>
-									<td key={Date.now()*Math.random()}>
+									<td key={Date.now()*Math.random()} className={item.blink}>
 										{item.measurements}
 									</td>
 								</tr>

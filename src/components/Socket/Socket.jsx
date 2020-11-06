@@ -34,13 +34,14 @@ export default class Socket extends React.Component {
         });
         item.measurements = str;
         item.timeStamp = formattedTime;
-        item.uniqKey = str.concat(item._id, item.name)        
+        item.uniqKey = str.concat(item._id, item.name);
         return item;
       });
       messages.filter((item, index) => messages.indexOf(item._id) === index);
 
       // updating of new messages
       let accumul = this.state.messages.slice();
+      accumul.map(item => item.blink = "");
 
       for (let i=0; i<messages.length; i++) {
         let hasID = false;
@@ -51,12 +52,15 @@ export default class Socket extends React.Component {
                 accumul[j].measurements = messages[i].measurements;                
                 accumul[j].unit = messages[i].unit;
                 accumul[j].uniqKey = messages[i].uniqKey;
+                accumul[j].blink = "blink";
               }
               hasID = true;
             }
         }
-        if (!hasID) // update values
+        if (!hasID) { // update values
+          messages[i].blink = "blink";
           accumul.push(messages[i]);
+        }
       }
       this.setState({ messages: accumul });      
     };
