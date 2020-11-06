@@ -22,25 +22,42 @@ export default class Socket extends React.Component {
     this.socket.onmessage = event => { 
       let messages = JSON.parse(event.data);
 
-      // formating the datestamp and value
+      // formating timestamp and value
       messages.map((item, dex) => {
         let str = "";
         let formattedTime = "";
         item.measurements.forEach((element, idx) => {
           const date = new Date(element[0] * 1000);
-          formattedTime = `Date: ${date.toLocaleString()}.  Value: `;
-          console.log('formattedTime: ', formattedTime);
-          if(element[1].length >= 2) str = `${element[0]}, {${element[1]}}.`;
-            else if(element[1].length === 1) str = `{${element[0]},  ${element[1]}}.`;
-              else str = `${element}.`;
+          formattedTime = `${date.toLocaleString()}`;
+          if (element[1].length >= 2) str = `[${element[1]}]`;
+            else str = `${element[1]}`;
         });
-        item.measurements = formattedTime + str;
+        item.measurements = str;
+        item.timeStamp = formattedTime;
         item.uniqKey = str.concat(item._id, item.name)        
         return item;
       });
+      messages.filter((item, index) => messages.indexOf(item._id) === index);
 
-      let accumul = this.state.messages.slice().concat(messages);
-      if (accumul.length >= 20) accumul.splice(0, 3);
+      // updating of new messages
+      let accumul = this.state.messages.slice();
+
+      for (let i=0; i<messages.length; i++) {
+        let hasID = false;
+        for (let j=0; j<accumul.length; j++) {
+            if (messages[i]._id === accumul[j]._id) {
+              if (messages[i].timeStamp && messages[i].measurements) {
+                accumul[j].timeStamp = messages[i].timeStamp;
+                accumul[j].measurements = messages[i].measurements;                
+                accumul[j].unit = messages[i].unit;
+                accumul[j].uniqKey = messages[i].uniqKey;
+              }
+              hasID = true;
+            }
+        }
+        if (!hasID) // update values
+          accumul.push(messages[i]);
+      }
       this.setState({ messages: accumul });      
     };
 
