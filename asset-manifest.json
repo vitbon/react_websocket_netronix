@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_websocket_netronix/static/css/main.f4b32357.chunk.css",
+    "main.css": "/react_websocket_netronix/static/css/main.47e629db.chunk.css",
     "main.js": "/react_websocket_netronix/static/js/main.75e7645e.chunk.js",
     "main.js.map": "/react_websocket_netronix/static/js/main.75e7645e.chunk.js.map",
     "runtime-main.js": "/react_websocket_netronix/static/js/runtime-main.d46727e5.js",
@@ -8,13 +8,13 @@
     "static/js/2.97409a37.chunk.js": "/react_websocket_netronix/static/js/2.97409a37.chunk.js",
     "static/js/2.97409a37.chunk.js.map": "/react_websocket_netronix/static/js/2.97409a37.chunk.js.map",
     "index.html": "/react_websocket_netronix/index.html",
-    "static/css/main.f4b32357.chunk.css.map": "/react_websocket_netronix/static/css/main.f4b32357.chunk.css.map",
+    "static/css/main.47e629db.chunk.css.map": "/react_websocket_netronix/static/css/main.47e629db.chunk.css.map",
     "static/js/2.97409a37.chunk.js.LICENSE.txt": "/react_websocket_netronix/static/js/2.97409a37.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d46727e5.js",
     "static/js/2.97409a37.chunk.js",
-    "static/css/main.f4b32357.chunk.css",
+    "static/css/main.47e629db.chunk.css",
     "static/js/main.75e7645e.chunk.js"
   ]
 }
