@@ -29,8 +29,7 @@ export default class Socket extends React.Component {
         item.measurements.forEach((element, idx) => {
           const date = new Date(element[0] * 1000);
           formattedTime = `${date.toLocaleString()}`;
-          if (element[1].length >= 2) str = `[${element[1]}]`;
-            else str = `${element[1]}`;
+          str = `${element[1]}`;
         });
         item.measurements = str;
         item.timeStamp = formattedTime;

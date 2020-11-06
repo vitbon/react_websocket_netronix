@@ -1,10 +1,10 @@
 :root {
-  --tem: rgb(255, 196, 0);
-  --pre: rgb(0, 0, 255);
-  --ser: rgb(221, 0, 0);
-  --bat: rgb(20, 173, 0);
-  --pm1: rgb(225, 0, 255);
-  --loc: rgb(0, 201, 191);
+  --tem: #ffc400;
+  --pre: #0000ff;
+  --ser: #dd0000;
+  --bat: #14ad00;
+  --pm1: #e100ff;
+  --loc: #00c9bf;
 }
 
 .container {
