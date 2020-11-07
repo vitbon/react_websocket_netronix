@@ -26,14 +26,13 @@ export default class Socket extends React.Component {
       messages.map((item, dex) => {
         let str = "";
         let formattedTime = "";
-        item.measurements.forEach((element, idx) => {
+        item.measurements.forEach(element => {
           const date = new Date(element[0] * 1000);
           formattedTime = `${date.toLocaleString()}`;
           str = `${element[1]}`;
         });
         item.measurements = str;
         item.timeStamp = formattedTime;
-        item.uniqKey = str.concat(item._id, item.name);
         return item;
       });
       messages.filter((item, index) => messages.indexOf(item._id) === index);
@@ -45,16 +44,15 @@ export default class Socket extends React.Component {
       for (let i=0; i<messages.length; i++) {
         let hasID = false;
         for (let j=0; j<accumul.length; j++) {
-            if (messages[i]._id === accumul[j]._id) {
-              if (messages[i].timeStamp && messages[i].measurements) {
-                accumul[j].timeStamp = messages[i].timeStamp;
-                accumul[j].measurements = messages[i].measurements;                
-                accumul[j].unit = messages[i].unit;
-                accumul[j].uniqKey = messages[i].uniqKey;
-                accumul[j].blink = "blink";
-              }
-              hasID = true;
+          if (messages[i]._id === accumul[j]._id) {
+            if (messages[i].timeStamp && messages[i].measurements) {
+              accumul[j].timeStamp = messages[i].timeStamp;
+              accumul[j].measurements = messages[i].measurements;                
+              accumul[j].unit = messages[i].unit;
+              accumul[j].blink = "blink";
             }
+            hasID = true;
+          }
         }
         if (!hasID) { // update values
           messages[i].blink = "blink";
@@ -83,9 +81,9 @@ export default class Socket extends React.Component {
 
   render() {
     return (
-      <div>
-        <Display messages={this.state.messages} key={this.state.messages.uniqKey} />
-      </div>
+      <React.Fragment>
+        <Display messages={this.state.messages} />
+      </React.Fragment>
     );
   }
 };

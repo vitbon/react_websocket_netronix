@@ -5,6 +5,7 @@
   --bat: #14ad00;
   --pm1: #e100ff;
   --loc: #00c9bf;
+  --bg:  #f5f5f5;
 }
 
 .container {
@@ -40,7 +41,7 @@
 }
 
 table td {
-  background-color: #f5f5f5;
+  background-color: var(--bg);
   padding: 5px 10px 8px;
   vertical-align: middle;
 }
@@ -52,8 +53,9 @@ table td {
 }
 
 @keyframes animation {
-  from { background-color: #ccc; }
-  to { background-color: #f5f5f5; }
+  0%   { background-color: var(--bg); }
+  50%  { background-color: #ccc; }
+  100% { background-color: var(--bg); }
 }
 
 table td.tem { border-left: 5px solid var(--tem); }
