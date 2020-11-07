@@ -1,21 +1,32 @@
 import React from 'react';
 import Display from '../Display/Display.jsx';
+import StatusBar from '../StatusBar/StatusBar.jsx';
 
 export default class Socket extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      messages: []
+    this.state = {
+      socket: 'wss://jsdemo.envdev.io/ws',
+      messages: [],
+      status: {
+        server: '',
+        info: '',
+        error: false
+      }
     }
   }
   
   componentDidMount(){
     // initializing Socket
-    this.socket = new WebSocket('wss://jsdemo.envdev.io/ws');
+    this.socket = new WebSocket(this.state.socket);
+    this.setState({status: {...this.state.status, server: this.state.socket} });
 
     // connected successfully
     this.socket.onopen = () => {
-      console.log("Connected successfully!");
+      this.setState({status: {...this.state.status, 
+                              info: "Connected", 
+                              error: false
+      }});
     };
 
     // received data from device and format it
@@ -64,25 +75,33 @@ export default class Socket extends React.Component {
 
     // encountered error
     this.socket.onerror = err => {
-      console.log(`Socket encountered error: ${err.message}. Closing socket.`);
+      this.setState({status: {...this.state.status, 
+        info: `Socket encountered error: ${err.message}. Closing socket`, 
+        error: true
+      }});
       this.socket.close();
     };
 
     // connection lost
     this.socket.onclose = event => {
-      if (event.wasClean) console.log(`Socket was closed clearly, code=${event.code}.`);
-        else console.log('The connection was lost.');
+      if (event.wasClean)
+          this.setState({status: {...this.state.status, 
+            info: `Socket was closed clearly, code=${event.code}`, 
+            error: true
+          }});
+        else
+          this.setState({status: {...this.state.status, 
+            info: 'The connection was lost', 
+            error: true
+          }});
     };
   };
-
-  componentWillUnmount() {
-    this.socket.close();
-  }
 
   render() {
     return (
       <React.Fragment>
         <Display messages={this.state.messages} />
+        <StatusBar status={this.state.status} />
       </React.Fragment>
     );
   }

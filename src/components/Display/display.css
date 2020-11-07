@@ -1,4 +1,7 @@
 :root {
+  --mainColor:   #4257b4;
+  --mainColor10: #f2f2fa;
+  --accentColor: #a2aee0;
   --tem: #ffc400;
   --pre: #0000ff;
   --ser: #dd0000;
@@ -36,12 +39,13 @@
   height: 35px;
   padding: 5px 10px 8px;
   font-weight: bold;
-  background-color: #ccc;
+  color: white;
+  background-color: var(--mainColor);
   vertical-align: middle;
 }
 
 table td {
-  background-color: var(--bg);
+  background-color: var(--mainColor10);
   padding: 5px 10px 8px;
   vertical-align: middle;
 }
@@ -54,7 +58,7 @@ table td {
 
 @keyframes animation {
   0%   { background-color: var(--bg); }
-  50%  { background-color: #ccc; }
+  50%  { background-color: var(--accentColor); }
   100% { background-color: var(--bg); }
 }
 

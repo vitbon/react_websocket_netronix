@@ -1,0 +1,35 @@
+:root {
+  --good: #009c0d;
+  --fail: #d00000;
+  --primary: #000;
+  --slave: #666;
+  --divider: #bbb;
+  --background: #eee;
+}
+
+footer {  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  height: 30px;
+  position: fixed;
+  padding: 1px 10px 3px 10px;
+  background-color: var(--background);
+}
+
+span { 
+  padding-right: 5px;
+  color: var(--slave); 
+}
+
+.primary { 
+  padding-right: 5px; 
+  color: var(--primary) 
+}
+
+.good { color: var(--good); }
+.fail { color: var(--fail); }

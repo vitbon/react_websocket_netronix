@@ -9,13 +9,13 @@ export default class Display extends Component {
 					<table width="100%" cellSpacing="2px">
 						<tbody>
 							<tr>
-								<td width="25%">_ID</td>
+								<td width="25%">ID</td>
 								<td width="15%">Name</td>
 								<td width="10%">Unit</td>
 								<td width="20%">Date & Time</td>
 								<td>Measurements</td>
 							</tr>
-						</tbody>	
+						</tbody>
 					</table>
 				</div>
 				<div className="wrapper">
@@ -44,7 +44,7 @@ export default class Display extends Component {
 								</tr>
 							</tbody>			
 						</table>
-					)}
+					)}					
 				</div>
 			</div>
 		);
