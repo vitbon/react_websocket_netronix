@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react_websocket_netronix/static/css/main.8c130d75.chunk.css",
-    "main.js": "/react_websocket_netronix/static/js/main.f9ceea18.chunk.js",
-    "main.js.map": "/react_websocket_netronix/static/js/main.f9ceea18.chunk.js.map",
+    "main.js": "/react_websocket_netronix/static/js/main.1d0e7081.chunk.js",
+    "main.js.map": "/react_websocket_netronix/static/js/main.1d0e7081.chunk.js.map",
     "runtime-main.js": "/react_websocket_netronix/static/js/runtime-main.d46727e5.js",
     "runtime-main.js.map": "/react_websocket_netronix/static/js/runtime-main.d46727e5.js.map",
     "static/js/2.af421aed.chunk.js": "/react_websocket_netronix/static/js/2.af421aed.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.d46727e5.js",
     "static/js/2.af421aed.chunk.js",
     "static/css/main.8c130d75.chunk.css",
-    "static/js/main.f9ceea18.chunk.js"
+    "static/js/main.1d0e7081.chunk.js"
   ]
 }
