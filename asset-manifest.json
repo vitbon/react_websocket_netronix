@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react_websocket_netronix/static/css/main.d005b64c.chunk.css",
-    "main.js": "/react_websocket_netronix/static/js/main.1d0e7081.chunk.js",
-    "main.js.map": "/react_websocket_netronix/static/js/main.1d0e7081.chunk.js.map",
+    "main.css": "/react_websocket_netronix/static/css/main.308b2b2a.chunk.css",
+    "main.js": "/react_websocket_netronix/static/js/main.f9ceea18.chunk.js",
+    "main.js.map": "/react_websocket_netronix/static/js/main.f9ceea18.chunk.js.map",
     "runtime-main.js": "/react_websocket_netronix/static/js/runtime-main.d46727e5.js",
     "runtime-main.js.map": "/react_websocket_netronix/static/js/runtime-main.d46727e5.js.map",
     "static/js/2.af421aed.chunk.js": "/react_websocket_netronix/static/js/2.af421aed.chunk.js",
     "static/js/2.af421aed.chunk.js.map": "/react_websocket_netronix/static/js/2.af421aed.chunk.js.map",
     "index.html": "/react_websocket_netronix/index.html",
-    "static/css/main.d005b64c.chunk.css.map": "/react_websocket_netronix/static/css/main.d005b64c.chunk.css.map",
+    "static/css/main.308b2b2a.chunk.css.map": "/react_websocket_netronix/static/css/main.308b2b2a.chunk.css.map",
     "static/js/2.af421aed.chunk.js.LICENSE.txt": "/react_websocket_netronix/static/js/2.af421aed.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d46727e5.js",
     "static/js/2.af421aed.chunk.js",
-    "static/css/main.d005b64c.chunk.css",
-    "static/js/main.1d0e7081.chunk.js"
+    "static/css/main.308b2b2a.chunk.css",
+    "static/js/main.f9ceea18.chunk.js"
   ]
 }
